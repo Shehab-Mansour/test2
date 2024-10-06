@@ -1,0 +1,88 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #1D9489; /* Primary Dark Teal */
+    background-color: #ceebe8; /* Lightest Teal */
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #1D9489; /* Primary Dark Teal */
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Card and Button Styles */
+.card-header, .btn-primary {
+    background-color: #1D9489; /* Primary Dark Teal */
+    color: #ffffff;
+}
+
+.card {
+    border: 1px solid #3FD3C3; /* Medium Teal */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border: 1px solid #3FD3C3; /* Medium Teal */
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form-label {
+    color: #1D9489; /* Primary Dark Teal */
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #3FD3C3;
+    border-color: #3FD3C3;
+}
+
+/* Image Section */
+.profile-image img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    border: 3px solid #1D9489;
+    cursor: pointer;
+}
+
+.profile-image img:hover {
+    opacity: 0.8;
+}
+
+.image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container {
+    max-width: 80%;
+}
+
+/* Form Layout */
+.card-body {
+    padding: 20px;
+}
+
+.btn-primary {
+    width: 100%;
+}
+.input-group {
+    display: flex;
+
+}
+
+

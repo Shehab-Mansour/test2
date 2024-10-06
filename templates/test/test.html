@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tset</title>
+
+    <!-- CSS for Cropper.js -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+<h3>تغيير الصورة الشخصية</h3>
+
+<!-- رفع الصورة -->
+<input type="file" id="imageInput" accept="image/*">
+<img id="preview" style="max-width: 100%; display: none;">
+
+<!-- زر لحفظ الصورة -->
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">حفظ الصورة</button>
+</form>
+
+
+<!-- عرض الصور الأخيرة -->
+<h3>الصور الأخيرة</h3>
+<div class="recent-images">
+    {% for image in images %}
+        <img src="media/{{ MEDIA_URL }}{{ image }}" alt="recent image" style="max-width: 100px; margin: 10px;">
+{#        <img src="{{ image.url }}" alt="recent image">#}
+{#        <img src="media/{{ MEDIA_URL }}{{ image }}" alt="recent image" style="max-width: 100px; margin: 10px;>#}
+    {% endfor %}
+</div>
+
+<script>
+    var cropper;
+    var image = document.getElementById('preview');
+    var input = document.getElementById('imageInput');
+
+    input.addEventListener('change', function(e) {
+        var file = e.target.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                image.src = event.target.result;
+                image.style.display = 'block';
+
+                // Initialize Cropper.js
+                cropper = new Cropper(image, {
+                    aspectRatio: 1,
+                    viewMode: 1,
+                    autoCropArea: 1
+                });
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    document.getElementById('saveButton').addEventListener('click', function() {
+        cropper.getCroppedCanvas().toBlob(function(blob) {
+            var formData = new FormData();
+            formData.append('croppedImage', blob);
+
+            // Send the cropped image to the server
+            fetch('upload_profile_picture', {
+                method: 'POST',
+                body: formData,
+            }).then(response => {
+                console.log('Upload successful');
+            }).catch(error => {
+                console.error('Upload failed:', error);
+            });
+        });
+    });
+</script>
+
+
+
+<!-- JS for Cropper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+
+</body>
+</html>

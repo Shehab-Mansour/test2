@@ -1,0 +1,33 @@
+
+{% extends 'doctor/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="user-card-container">
+    {% for user in allusers %}
+        <div class="user-card">
+            <div class="profile-image-container">
+                <img src="{{ user.photo.url }}" alt="User Picture" class="profile-image">
+            </div>
+            <div class="user-details">
+                <h3 class="username">
+                    <span class="first-name">{{ user.first_name }}</span>
+                    <span class="last-name">{{ user.last_name }}</span>
+                </h3>
+                <div class="user-info">
+                    <p class="age">Age: {{ user.age }}</p>
+                </div>
+                <div class="address-container">
+                    <p class="address-part1">{{ user.address }}</p>
+                    <p class="address-part2">{{ user.city }}</p>
+                </div>
+                <div class="email-status">
+                    <p class="email">{{ user.email}}</p>
+                    <p class="state">{{ user.state }}</p>
+                </div>
+            </div>
+
+        </div>
+  {% endfor%}
+</div>
+{% endblock %}

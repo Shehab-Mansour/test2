@@ -1,0 +1,112 @@
+/* style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #1D9489; /* Primary Dark Teal */
+    background-color: #ceebe8; /* Lightest Teal */
+}
+
+.navbar, .card-header, .btn-primary {
+    background-color: #1D9489; /* Primary Dark Teal */
+    color: #ffffff; /* White Text */
+}
+
+.card, .alert {
+    border-color: #3FD3C3; /* Medium Teal */
+}
+
+.btn-secondary {
+    background-color: #6FDED2; /* Lighter Teal */
+    color: #ffffff; /* White Text */
+    border-color: #1D9489; /* Primary Dark Teal */
+}
+
+.alert-success {
+    background-color: #6FDED2; /* Lighter Teal Background */
+    color: #ffffff; /* White Text */
+}
+.fixed-image {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    max-width: 841px;
+    max-height: 761px;
+    z-index: -1;
+}
+/* style.css */
+
+.navbar, .card-header, .btn-primary {
+    background-color: #4d7c8a; /* Soft Teal */
+    color: #ffffff; /* White Text */
+}
+
+
+.inventory-summary {
+    background-color: #8FE5DC; /* Lightest Teal */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.summary-details {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.summary-item h3 {
+    color: #1D9489; /* Primary Dark Teal */
+    font-size: 1.2em;
+}
+
+.summary-item p {
+    color: #3FD3C3; /* Medium Teal */
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+.card-header:first-child {
+    border-radius: calc(.25rem - -5px) calc(0.25rem - -5px) 0 0;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    border-radius: 1rem;
+}
+.alert {
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+}
+
+/* Style for default navbar */
+.navbar {
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+}
+
+/* Style for smaller navbar */
+.small-navbar {
+    padding: 10px;
+    background-color: #f8f9fa; /* نفس لون الخلفية الأساسي أو يمكن تغييره */
+}
+
+.navbar-brand img {
+    transition: height 0.3s ease-in-out;
+    height: 40px;
+}
+
+.small-navbar .navbar-brand img {
+    height: 30px;
+}

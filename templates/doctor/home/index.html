@@ -1,0 +1,70 @@
+{% extends 'doctor/base.html' %}
+{% block content %}
+    <div class="container mt-4">
+        <!-- Summary Section -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-bg-light mb-3">
+                    <div class="card-header">Today's Appointments</div>
+                    <div class="card-body">
+                        <h5 class="card-title">8 Appointments</h5>
+                        <p class="card-text">Check the schedule to see detailed timings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-bg-light mb-3">
+                    <div class="card-header">Urgent Tasks</div>
+                    <div class="card-body">
+                        <h5 class="card-title">3 Urgent Tasks</h5>
+                        <p class="card-text">Complete these tasks as soon as possible.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-bg-light mb-3">
+                    <div class="card-header">Pending Payments</div>
+                    <div class="card-body">
+                        <h5 class="card-title">$1,200 Due</h5>
+                        <p class="card-text">Follow up on these payments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-success" role="alert">
+                    You have a new patient registration! <a href="#" class="alert-link">View Details</a>.
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Access Buttons -->
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn btn-primary m-2">Add New Appointment</button>
+                <button class="btn btn-secondary m-2">Add New Patient</button>
+            </div>
+        </div>
+
+         <div class="inventory-summary">
+        <h2>Warehouse Inventory Summary</h2>
+        <div class="summary-details">
+            <div class="summary-item">
+                <h3>Total Items</h3>
+                <p id="totalItems">0</p>
+            </div>
+            <div class="summary-item">
+                <h3>Total Categories</h3>
+                <p id="totalCategories">0</p>
+            </div>
+            <div the="summary-item">
+                <h3>Most Stocked Item</h3>
+                <p id="mostStocked">N/A</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <!-- Main dashboard content here -->

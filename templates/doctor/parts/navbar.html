@@ -1,0 +1,100 @@
+
+{% load static %}
+
+
+{#<nav class="navbar navbar-expand-lg navbar-light bg-light">#}
+{#    <div class="container-fluid">#}
+{#        <a class="navbar-brand" href="#"><img src="{% static 'image/Logo-03.png'%}" alt="Clinic Logo" style="height: 40px;"></a>#}
+{#        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">#}
+{#            <span class="navbar-toggler-icon"></span>#}
+{#        </button>#}
+{#        <div class="collapse navbar-collapse" id="navbarNav">#}
+{#            <ul class="navbar-nav me-auto">#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link active" aria-current="page" href="{% url 'doctorhome' %}">Home</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="#">Appointments</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="#">Patients</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="#">Staff</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="#">Reports</a>#}
+{#                </li>#}
+{#            </ul>#}
+{#            <ul class="navbar-nav ms-auto">#}
+{#                <!-- Dropdown for user profile -->#}
+{#                <li class="nav-item dropdown">#}
+{#                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">#}
+{#                        <span>{{ username }} <t>  </span>#}
+{#                        <img src="{{photo}}" alt="User Image" class="rounded-circle" style="width: 30px; height: 30px; margin-right: 8px;">#}
+{#                    </a>#}
+{#                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">#}
+{#                        <li><a class="dropdown-item" href="{% url 'management' %}">Manage account</a></li>#}
+{#                        <li><hr class="dropdown-divider"></li>#}
+{#                        <li><a class="dropdown-item" href="#">#}
+{#                            <form action="{% url 'end_session' %}" method="post">#}
+{#                            {% csrf_token %}#}
+{#                            <input class="btn btn-danger" type="submit" value="Log OUT" />#}
+{#                            </form>#}
+{#                        </a></li>#}
+{#                    </ul>#}
+{#                </li>#}
+{#            </ul>#}
+{#        </div>#}
+{#    </div>#}
+{#</nav>#}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/home">
+            <img src="{% static 'image/Logo-03.png' %}" alt="Clinic Logo" class="logo-img">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'doctorhome' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Appointments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/doctor/patients">Patients</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Staff</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Reports</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>{{ username }}</span>
+                        <img src="{{photo}}" alt="User Image" class="rounded-circle" style="width: 30px; height: 30px; margin-right: 8px;">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li><a class="dropdown-item" href="{% url 'management' %}">Manage account</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">
+                            <form action="{% url 'end_session' %}" method="post">
+                                {% csrf_token %}
+                                <input class="btn btn-danger" type="submit" value="Log OUT" />
+                            </form>
+                        </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Include the script.js -->
+
